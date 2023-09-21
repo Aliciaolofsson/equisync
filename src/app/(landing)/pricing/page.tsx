@@ -1,4 +1,4 @@
-import PricingCard from '@/components/PricingCard';
+import PricingCard from '@/app/components/PricingCard';
 import React from 'react';
 
 const App = () => {
