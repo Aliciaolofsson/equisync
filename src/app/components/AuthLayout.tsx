@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { Star, ChevronLeft } from 'lucide-react';
-import Logo from '@/components/Logo';
+import Logo from './Logo';
 
 interface CheckPoint {
   id: number;
@@ -36,7 +35,6 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({
             <div>
               {checkPoints.map((checkPoint) => (
                 <div className="flex items-center" key={checkPoint.id}>
-                  <Star className="m-2 mx-6" color="white" size={30} />
                   <h2 className="tracking-wide">{checkPoint.title}</h2>
                 </div>
               ))}
@@ -49,7 +47,6 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({
               href="/"
               className="btn btn-circle bg-transparent border-transparent"
             >
-              <ChevronLeft className="h-7 w-7" />
             </Link>
           </div>
 

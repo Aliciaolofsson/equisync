@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import type { Database } from '@/types/supabase.types';
+import { Database } from '../types/supabase.types';
 
 interface Horse {
   id: number;

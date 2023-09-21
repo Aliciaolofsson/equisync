@@ -1,7 +1,6 @@
 'use client';
 
 import Logo from './Logo';
-import NavLinks from './NavLinks';
 import AvatarMenu from './AvatarMenu';
 
 const DashboardNavbar: React.FC = () => {

@@ -2,8 +2,7 @@
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
-import type { Database } from "@/types/supabase.types";
-import { LogOut } from "lucide-react";
+import { Database } from "../types/supabase.types";
 
 function SignOutButton() {
   const router = useRouter();
@@ -19,7 +18,7 @@ function SignOutButton() {
     }
   };
 
-  return <button onClick={handleSignOut} className="flex items-center hover:text-red-600 text-sm"><span className="mr-1"><LogOut /></span>Sign Out</button>;
+  return <button onClick={handleSignOut} className="flex items-center hover:text-red-600 text-sm"><span className="mr-1">LogOut</span>Sign Out</button>;
 }
 
 export default SignOutButton;

@@ -1,5 +1,4 @@
 'use client';
-import { ChevronLeft, ChevronRight, Inbox, LayoutDashboard, MessageCircle } from 'lucide-react';
 import React, { useState } from 'react';
 import Link from 'next/link';
 
@@ -24,19 +23,19 @@ export default function DashboardSidebar() {
       url: '/dashboard', // URL for Inbox
       dropdownItems: [
         { title: 'Dashboard', url: 'dashboard' },
-        { title: 'Subpage 2', url: '/planner/subpage2' }
+        { title: 'Subpage 2', url: '/planner/subpage2' },
       ],
-      icons: <LayoutDashboard />
+      icons: '<LayoutDashboard />',
     },
     {
       id: 'dashSidebarLink2',
       title: 'Inbox',
       url: '/inbox', // URL for Inbox
-      icons: <Inbox />,
+      icons: '<Inbox />',
       dropdownItems: [
         { title: 'Subpage 1', url: '/planner/subpage1' },
-        { title: 'Subpage 2', url: '/planner/subpage2' }
-      ]
+        { title: 'Subpage 2', url: '/planner/subpage2' },
+      ],
     },
     {
       id: 'dashSidebarLink3',
@@ -44,10 +43,10 @@ export default function DashboardSidebar() {
       url: '/chat', // URL for Inbox
       dropdownItems: [
         { title: 'Send Message', url: '/planner/subpage1' },
-        { title: 'Subpage 2', url: '/planner/subpage2' }
+        { title: 'Subpage 2', url: '/planner/subpage2' },
       ],
-      icons: <MessageCircle />
-    }
+      icons: '<MessageCircle />',
+    },
   ];
 
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -71,14 +70,14 @@ export default function DashboardSidebar() {
         isSidebarCollapsed ? 'w-22' : 'w-64'
       } transition-width duration-300 h-screen`}
     >
-      <div className="p-4">
+      <div className='p-4'>
         <button
           onClick={toggleSidebar}
-          className="flex justify-center items-center text-neutral rounded-md bg-base-200 w-8 h-8 mx-2"
+          className='flex justify-center items-center text-neutral rounded-md bg-base-200 w-8 h-8 mx-2'
         >
-          {isSidebarCollapsed ? <ChevronRight /> : <ChevronLeft />}
+          {isSidebarCollapsed ? '<ChevronRight />' : '<ChevronLeft />'}
         </button>
-        <div className="flex flex-col mt-8">
+        <div className='flex flex-col mt-8'>
           {navLinks.map((navLink) => (
             <div
               key={navLink.id}
@@ -89,10 +88,10 @@ export default function DashboardSidebar() {
               {isSidebarCollapsed ? (
                 navLink.url ? (
                   <Link
-                    className="hover:bg-base-content rounded-md"
+                    className='hover:bg-base-content rounded-md'
                     href={navLink.url}
                   >
-                    <div className="p-1">{navLink.icons}</div>
+                    <div className='p-1'>{navLink.icons}</div>
                   </Link>
                 ) : (
                   navLink.icons
@@ -107,7 +106,7 @@ export default function DashboardSidebar() {
                     }`}
                     onClick={() => toggleDropdown(navLink.id)}
                   >
-                    <div className="mr-10">{navLink.icons}</div>
+                    <div className='mr-10'>{navLink.icons}</div>
                     <h1> {navLink.title}</h1>
                   </div>
                   {navLink.dropdownItems &&
@@ -126,10 +125,10 @@ export default function DashboardSidebar() {
 
 function DropdownMenu({ dropdownItems }: { dropdownItems: DropdownItem[] }) {
   return (
-    <div className="mx-20 mt-4 w-full">
+    <div className='mx-20 mt-4 w-full'>
       {dropdownItems.map((item) => (
         <div key={item.title}>
-          <Link className="dropdown-item" href={item.url}>
+          <Link className='dropdown-item' href={item.url}>
             {item.title}
           </Link>
         </div>

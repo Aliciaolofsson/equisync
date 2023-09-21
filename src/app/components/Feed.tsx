@@ -1,6 +1,5 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
-import { string } from 'zod';
 
 export default async function Index() {
   interface feedPost {

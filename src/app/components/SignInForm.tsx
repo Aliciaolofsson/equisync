@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { z } from 'zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { Database } from '@/types/supabase.types';
+import { Database } from '../types/supabase.types';
 
 function SignInForm() {
   const [error, setError] = useState<string | null>(null);

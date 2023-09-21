@@ -1,4 +1,3 @@
-import { Apple } from 'lucide-react';
 import Link from 'next/link';
 
 interface LogoProps {
@@ -8,7 +7,6 @@ interface LogoProps {
 function Logo({ hideText }: LogoProps) {
   return (
     <Link className="flex items-center" href={'/'}>
-      <Apple className="h-8 w-8" />
 
       {!hideText && (
         <div className="select-none">
