@@ -69,13 +69,13 @@ export default function Home() {
           </ul>
         </section>
       </div>
-      <section className=''>
+      {/* <section className=''>
         <div className='bg-showjumpingImg bg-cover h-screen'>
           <div className='h-screen bg-whiteOverlay text-white flex justify-center items-center text-6xl'>
             <h1>Landing page</h1>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
