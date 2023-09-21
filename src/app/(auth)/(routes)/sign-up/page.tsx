@@ -1,10 +1,10 @@
 
 
-import AuthLayout from "@/app/components/AuthLayout";
 import SignUpForm from "@/app/components/SignUpForm";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import AuthLayout from "../../AuthLayout";
 
 export default async function SignUpPage() {
   const supabase = createServerComponentClient({ cookies });
