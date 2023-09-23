@@ -1,5 +1,3 @@
-// change
-
 export const dynamic = "force-dynamic";
 
 import "./globals.css";
