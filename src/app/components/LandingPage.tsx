@@ -33,14 +33,12 @@ export default function Home() {
   ];
   return (
     <div>
-      <div className='flex flex-col items-center justify-center bg-gradient-to-b from-accent to-blue-950   h-96    text-white text-6xl   tracking-wide'>
-        <h1> Never miss out on a training oppertunity</h1>
-        <h2 className='my-6 text-xl italic'>
-          EquiSync makes riders and trainers connect
-        </h2>
+      <div className='flex flex-col items-center justify-center bg-gradient-to-b from-accent to-blue-950 h-96 py-80 px-56  text-white text-8xl font-bold text-center '>
+        <h1 className='py-24'> Never
+         miss out on a training oppertunity</h1>
         <Link
           href='/sign-up'
-          className='btn bg-transparent text-white hover:bg-accent-opacity  '
+          className='btn bg-transparent text-white hover:bg-accent-opacity text-base '
         >
           Saddle up
         </Link>

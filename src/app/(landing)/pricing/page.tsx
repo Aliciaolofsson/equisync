@@ -18,7 +18,7 @@ const App = () => {
   ];
 
   return (
-    <div className="flex justify-center items-center h-screen bg-accent">
+    <div className="flex justify-center items-center bg-accent">
       {pricingPlans.map((plan, index) => (
         <PricingCard key={index} title={plan.title} price={plan.price} features={plan.features} />
       ))}

@@ -6,11 +6,10 @@ interface LogoProps {
 
 function Logo({ hideText }: LogoProps) {
   return (
-    <Link className="flex items-center" href={'/'}>
-
+    <Link className='flex items-center' href={'/'}>
       {!hideText && (
-        <div className="select-none">
-          <span className="text-xl tracking-widest uppercase ml-2 font-bold">
+        <div className='select-none'>
+          <span className='text-xl tracking-widest uppercase ml-2 font-bold'>
             Equisync
           </span>
         </div>
