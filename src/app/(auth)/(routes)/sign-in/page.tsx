@@ -31,7 +31,7 @@ export default async function SignInPage() {
       authPage='Welcome back'
       changePage="Don't have an account?"
       authChangePage='Sign up'
-      authLinks='&nbsp;sign-up'
+      authLinks='sign-up'
       customAuthComponent={<SignInForm />}
     />
   );

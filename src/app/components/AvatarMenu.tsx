@@ -3,6 +3,7 @@ import Image from 'next/image';
 import avatarImg from 'public/images/AO.png';
 import SignOutButton from './SignOutButton';
 import Link from 'next/link';
+import { Settings, User } from 'lucide-react';
 
 export default function AvatarMenu() {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -14,13 +15,13 @@ export default function AvatarMenu() {
   const menuItems = [
     {
       text: 'Profile',
-      icon: '',
+      icon: <User />,
       href: 'profile',
       id: 'sidebarItems1',
     },
     {
       text: 'Settings',
-      icon: 'hi',
+      icon: <Settings />,
       href: 'settings',
       id: 'sidebarItems2',
     },

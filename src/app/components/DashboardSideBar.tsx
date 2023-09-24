@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { ChevronLeft, ChevronRight, Inbox, LayoutDashboard, MessageCircle } from 'lucide-react';
 
 interface NavLink {
   id: string;
@@ -25,13 +26,13 @@ export default function DashboardSidebar() {
         { title: 'Dashboard', url: 'dashboard' },
         { title: 'Subpage 2', url: '/planner/subpage2' },
       ],
-      icons: '<LayoutDashboard />',
+      icons: <LayoutDashboard />,
     },
     {
       id: 'dashSidebarLink2',
       title: 'Inbox',
       url: '/inbox', // URL for Inbox
-      icons: '<Inbox />',
+      icons: <Inbox />,
       dropdownItems: [
         { title: 'Subpage 1', url: '/planner/subpage1' },
         { title: 'Subpage 2', url: '/planner/subpage2' },
@@ -45,7 +46,7 @@ export default function DashboardSidebar() {
         { title: 'Send Message', url: '/planner/subpage1' },
         { title: 'Subpage 2', url: '/planner/subpage2' },
       ],
-      icons: '<MessageCircle />',
+      icons: <MessageCircle />,
     },
   ];
 
@@ -75,7 +76,7 @@ export default function DashboardSidebar() {
           onClick={toggleSidebar}
           className='flex justify-center items-center text-neutral rounded-md bg-base-200 w-8 h-8 mx-2'
         >
-          {isSidebarCollapsed ? '<ChevronRight />' : '<ChevronLeft />'}
+          {isSidebarCollapsed ? <ChevronRight /> : <ChevronLeft />}
         </button>
         <div className='flex flex-col mt-8'>
           {navLinks.map((navLink) => (
