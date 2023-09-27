@@ -8,21 +8,24 @@ export default function MainNav() {
     {
       id: 'mainNavLink1',
       title: 'Pricing',
-      url: '/pricing'
+      url: '/pricing',
     },
     {
       id: 'mainNavLink2',
       title: 'FAQ',
-      url: '/faq'
-    }
+      url: '/faq',
+    },
   ];
 
   return (
-    <nav className="py-10 px-10 grid grid-cols-2 items-center">
+    <nav className='py-10 px-10 grid grid-cols-2 items-center '>
       <Logo />
-      <div className="flex items-center place-content-end">
-        <MainNavLink navLinks={navLinks} /> 
-        <Link href={'sign-in'} className="btn btn-sm mr-5 mx-4">
+      <div className='flex items-center place-content-end'>
+        <MainNavLink navLinks={navLinks} />
+        <Link
+          href={'sign-in'}
+          className='btn btn-neutral  text-white capitalize btn-sm mr-5 border-none mx-4 hover:bg-indigo-950'
+        >
           Sign in
         </Link>
       </div>

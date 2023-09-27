@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Logo from './Logo';
+import { ChevronLeft } from 'lucide';
 
 interface CheckPoint {
   id: number;
@@ -41,12 +42,27 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({
             </div>
           </div>
         </section>
-        <section className='p-10 h-full w-3/4 flex flex-col justify-center items-center'>
+        <section className='p-5 h-full w-3/4 flex flex-col justify-center items-center'>
           <div className='mr-auto'>
             <Link
               href='/'
-              className='btn btn-circle bg-transparent border-transparent'
-            ></Link>
+              className='btn bg-transparent border-transparent p-1 '
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                className='lucide-chevron-left'
+              >
+                <path d='m15 18-6-6 6-6' />
+              </svg>
+            </Link>
           </div>
 
           <div className='flex flex-col items-center my-auto'>

@@ -14,7 +14,7 @@ export default function DashboardLayout({
 
       <div className="flex flex-col flex-grow">
         <DashboardNavbar />
-        <main className="flex-grow p-10">{children}</main>
+        <main className="flex-grow px-10">{children}</main>
       </div>
     </div>
   );
