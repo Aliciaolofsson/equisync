@@ -11,17 +11,28 @@ const App = () => {
     {
       title: 'Trainer',
       price: '$19.99/month',
-      features: ['All Basic Plan features', 'Additional Feature 4', 'Additional Feature 5'],
+      features: [
+        'All Basic Plan features',
+        'Additional Feature 4',
+        'Additional Feature 5',
+      ],
     },
-    
+
     // Add more pricing plans as needed
   ];
 
   return (
-    <div className="flex justify-center items-center bg-accent">
-      {pricingPlans.map((plan, index) => (
-        <PricingCard key={index} title={plan.title} price={plan.price} features={plan.features} />
-      ))}
+    <div>
+      <div className='flex justify-center items-center bg-accent p-24'>
+        {pricingPlans.map((plan, index) => (
+          <PricingCard
+            key={index}
+            title={plan.title}
+            price={plan.price}
+            features={plan.features}
+          />
+        ))}
+      </div>
     </div>
   );
 };

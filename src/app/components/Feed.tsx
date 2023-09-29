@@ -5,6 +5,8 @@ export default async function Index() {
   interface feedPost {
     id: string;
     title: string;
+    type: string;
+
   }
 
   const feedPost = [{}];
@@ -23,10 +25,10 @@ export default async function Index() {
             key={activity.id}
           >
             <li>
-              {feedPost.map((feedPosts) => (
+              {feedPost.map((key) => (
                 <h2 key='discipline'>Discipline:&nbsp;</h2>
               ))}
-              {activity.title}
+              {activity.type}
             </li>
           </div>
         ))}

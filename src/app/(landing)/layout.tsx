@@ -1,5 +1,6 @@
 import React from 'react';
 import MainNav from '../components/MainNav';
+import Footer from '../components/Footer';
 
 export default function LandingLayout({
   children
@@ -10,6 +11,7 @@ export default function LandingLayout({
     <div>
       <MainNav />
         <main>{children}</main>
+      <Footer />
     </div>
   );
 }
