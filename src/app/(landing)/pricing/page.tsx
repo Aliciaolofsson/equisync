@@ -1,4 +1,4 @@
-import PricingCard from '@/app/components/PricingCard';
+import PricingCard from '@/app/(landing)/pricing/PricingCard';
 import React from 'react';
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <div>
-      <div className='flex justify-center items-center bg-accent p-24'>
+      <div className='flex justify-center items-center bg-neutral h-screen '>
         {pricingPlans.map((plan, index) => (
           <PricingCard
             key={index}
