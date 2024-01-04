@@ -31,22 +31,25 @@ export default function Home() {
     },
   ];
   return (
-    <div>
-      <div className='flex flex-col items-center justify-center bg-neutral h-96 py-80 px-56  text-white text-8xl font-bold text-center '>
-        <h1 className='py-24'>The Equestrian Community</h1>
+    <main className='flex flex-col'>
+      <div className='flex justify-center items-center text-white flex-col bg-neutral py-12 md:py-32'>
+        <h1 className='py-16 text-4xl font-bold  md:text-8xl'>
+          The Equestrian <br />
+          Community
+        </h1>
         <Link
           href='/sign-up'
-          className='btn bg-transparent text-white hover:bg-slate-600  normal-case text-lg'
+          className='btn bg-transparent text-white hover:bg-slate-600 normal-case md:text-lg'
         >
           Get connected
         </Link>
       </div>
       <div className='grid justify-center items-center md:grid-cols-2'>
-        <div className='bg-showjumpingImg bg-cover'>hej</div>
-        <div className='bg-blue-200'>hi</div>
-        <div>då</div>
-        <div>då</div>
+        <div className='bg-sky-50 p-56'>hej</div>
+        <div className='bg-blue-200 p-56'>hi</div> 
+        <div className='bg-orange-200 p-56'>hio</div>
+        <div className='bg-red-500 bg-cover p-56'>fe</div>
       </div>
-    </div>
+    </main>
   );
 }

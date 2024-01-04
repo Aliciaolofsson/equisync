@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
@@ -7,7 +7,6 @@ import { z } from 'zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Database } from '../types/supabase.types';
-
 
 function SignUpForm() {
   const [error, setError] = useState<string | null>(null);
@@ -42,30 +41,30 @@ function SignUpForm() {
   };
 
   return (
-    <form onSubmit={form.handleSubmit(handleSignUp)} className="flex flex-col">
-      <div className="flex flex-col space-y-2">
-        <label>Email</label>
-        <input
-          type="email"
-          placeholder="name@domain.com"
-          className="border rounded p-2 w-72"
-          autoCapitalize="none"
-          autoComplete="email"
-          autoCorrect="off"
-          {...form.register('email')}
-        />
-        <label>Password</label>
-        <input
-          type="password"
-          placeholder="********"
-          className="border rounded p-2 w-72"
-          {...form.register('password')}
-        />
+    <form onSubmit={form.handleSubmit(handleSignUp)} className='flex flex-col'>
+      <div className='flex flex-col space-y-2'>
+          <label>Email</label>
+          <input
+            type='email'
+            placeholder='name@domain.com'
+            className='border rounded p-2 w-72'
+            autoCapitalize='none'
+            autoComplete='email'
+            autoCorrect='off'
+            {...form.register('email')}
+          />
+          <label>Password</label>
+          <input
+            type='password'
+            placeholder='********'
+            className='border rounded p-2 w-72'
+            {...form.register('password')}
+          />
       </div>
-      <button type="submit" className="btn my-4">
+      <button type='submit' className='btn-md btn my-4'>
         Create Account
       </button>
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className='text-red-500'>{error}</p>}
     </form>
   );
 }
