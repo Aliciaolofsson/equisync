@@ -5,9 +5,9 @@ import AvatarMenu from './AvatarMenu';
 
 const DashboardNavbar: React.FC = () => {
   return (
-    <nav className="py-5 px-10 grid grid-cols-2 items-center">
+    <nav className='py-5 px-10 grid grid-cols-2 items-center'>
       <Logo />
-      <div className="flex justify-end items-center place-content-end">
+      <div className='flex justify-end items-center place-content-end mx-5'>
         <AvatarMenu />
       </div>
     </nav>

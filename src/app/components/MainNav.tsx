@@ -9,7 +9,6 @@ import MenuOverlay from './MenuOverlay';
 const navItems = [
   { label: 'Pricing', link: '/pricing' },
   { label: 'FAQ', link: '/faq' },
-  { label: 'Sign up', link: '/sign-up' },
 ];
 
 const MainNav: React.FC = () => {
@@ -28,14 +27,13 @@ const MainNav: React.FC = () => {
         </Link>
         <ul className='hidden md:flex justify-center items-center'>
           {navItems.map((item, index) => (
-            <li
-              key={index}
-              className='text-md font-semibold mx-3 hover:text-purple-300'
-            >
+            <li key={index} className='text-md mx-3 hover:text-purple-300'>
               <NavLinks href={item.link} title={item.label} />
             </li>
           ))}
-         
+          <button className='btn btn-sm btn-neutral font-thin text-white capitalize ml-5 '>
+            <Link href={'/sign-up'}>Sign Up</Link>
+          </button>
         </ul>
         <div className='mobile-menu block md:hidden'>
           <button

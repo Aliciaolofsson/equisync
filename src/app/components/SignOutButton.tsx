@@ -25,7 +25,7 @@ function SignOutButton() {
       className='flex items-center hover:text-red-600 text-sm'
     >
       <span className='mr-1'>
-        <LogOut />
+        <LogOut width={18} height={18} />
       </span>
       Sign Out
     </button>
