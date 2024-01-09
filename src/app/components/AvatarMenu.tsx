@@ -41,9 +41,9 @@ export default function AvatarMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Avatar>
+        <Avatar >
           <AvatarImage src='' />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarFallback className='p-4'>CN</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

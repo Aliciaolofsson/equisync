@@ -1,4 +1,5 @@
 'use client';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Upload } from 'lucide-react';
 import React, { useState } from 'react';
 
@@ -8,10 +9,10 @@ export default function AvatarPicker() {
   return (
     <div className='flex flex-col'>
       
-      <div
-        className='bg-red-300 w-20 h-20 avatar rounded-full flex justify-center items-center'
-      ></div>
-      <input className='my-6' type='file' id='fileInput' />
+      <Avatar>
+          <AvatarImage src='' />
+          <AvatarFallback>AO</AvatarFallback>
+        </Avatar>      <input className='my-6' type='file' id='fileInput' />
     </div>
   );
 }
