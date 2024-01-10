@@ -7,8 +7,11 @@ import { z } from 'zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Database } from '../types/supabase.types';
+import { useUser } from '../contexts/UserContext';
 
 function SignUpForm() {
+  const { fetchData, addNamesToUserProfile } = useUser();
+
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -28,22 +31,6 @@ function SignUpForm() {
     resolver: zodResolver(formSchema),
   });
 
-  const updateName = async (firstName: string, lastName: string) => {
-    try {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      const id = session?.user.id;
-
-      const {} = await supabase
-        .from('profiles')
-        .update({ firstName: firstName, lastName: lastName })
-        .eq('id', id);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   const handleSignUp: SubmitHandler<user> = async (values) => {
     try {
       setIsLoading(true);
@@ -54,8 +41,8 @@ function SignUpForm() {
       });
       if (error) throw error;
 
-      updateName(values.firstName, values.lastName);
-
+      addNamesToUserProfile(values.firstName, values.lastName);
+      fetchData();
       router.push('/dashboard');
     } catch (error) {
       setError((error as Error).message);

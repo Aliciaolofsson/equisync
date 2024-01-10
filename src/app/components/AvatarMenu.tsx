@@ -15,8 +15,11 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarImage } from '@radix-ui/react-avatar';
 import { AvatarFallback } from '@/components/ui/avatar';
+import { useUser } from '../contexts/UserContext';
 
 export default function AvatarMenu() {
+  const { user } = useUser();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const onMenuClick = () => {
@@ -43,7 +46,7 @@ export default function AvatarMenu() {
       <DropdownMenuTrigger>
         <Avatar >
           <AvatarImage src='' />
-          <AvatarFallback className='p-4'>CN</AvatarFallback>
+          <AvatarFallback className='p-4'>{user?.initials}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent>

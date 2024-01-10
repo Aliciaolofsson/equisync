@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
@@ -7,8 +7,11 @@ import { z } from 'zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Database } from '../types/supabase.types';
+import { useUser } from '../contexts/UserContext';
 
 function SignInForm() {
+  const { fetchData } = useUser();
+
   const [error, setError] = useState<string | null>(null);
 
   const router = useRouter();
@@ -24,7 +27,7 @@ function SignInForm() {
   });
 
   const handleSignIn: SubmitHandler<z.infer<typeof formSchema>> = async (
-    values: z.infer<typeof formSchema>,
+    values: z.infer<typeof formSchema>
   ) => {
     try {
       const { error } = await supabase.auth.signInWithPassword({
@@ -32,6 +35,7 @@ function SignInForm() {
         password: values.password,
       });
       if (error) throw error;
+      fetchData();
       router.push('/dashboard');
     } catch (error) {
       setError((error as Error).message);
@@ -40,30 +44,30 @@ function SignInForm() {
   };
 
   return (
-    <form onSubmit={form.handleSubmit(handleSignIn)} className="flex flex-col">
-      <div className="flex flex-col space-y-2">
+    <form onSubmit={form.handleSubmit(handleSignIn)} className='flex flex-col'>
+      <div className='flex flex-col space-y-2'>
         <label>Email</label>
         <input
-          type="email"
-          placeholder="name@domain.com"
-          className="border rounded p-2 w-72"
-          autoCapitalize="none"
-          autoComplete="email"
-          autoCorrect="off"
+          type='email'
+          placeholder='name@domain.com'
+          className='border rounded p-2 w-72'
+          autoCapitalize='none'
+          autoComplete='email'
+          autoCorrect='off'
           {...form.register('email')}
         />
         <label>Password</label>
         <input
-          type="password"
-          placeholder="********"
-          className="border rounded p-2 w-72"
+          type='password'
+          placeholder='********'
+          className='border rounded p-2 w-72'
           {...form.register('password')}
         />
       </div>
-      <button type="submit" className="btn my-4">
+      <button type='submit' className='btn my-4'>
         Sign In
       </button>
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className='text-red-500'>{error}</p>}
     </form>
   );
 }
